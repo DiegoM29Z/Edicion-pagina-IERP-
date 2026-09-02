@@ -1,0 +1,70 @@
+{
+  "name": "underscores",
+  "version": "1.0.0",
+  "description": "Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.",
+  "author": "Automattic Theme Team",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
+  "homepage": "https://github.com/Automattic/_s#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Automattic/_s.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Automattic/_s/issues"
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.19",
+    "@wordpress/scripts": "^26.19.0",
+    "autoprefixer": "^10.4.21",
+    "copy-webpack-plugin": "^13.0.1",
+    "dir-archiver": "^1.1.1",
+    "glob": "^11.0.3",
+    "lucide-react": "^0.553.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "rimraf": "^6.1.0",
+    "rtlcss": "^3.5.0",
+    "sass": "^1.69.5",
+    "tailwindcss": "^3.4.1"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/css/index.css -o ./assets/css/index.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/css/index.css -o ./assets/css/index.css --watch",
+    "dev:css": "npx tailwindcss -i ./src/css/index.css -o ./assets/css/index.css --watch --source-map",
+    "build:blocks": "wp-scripts build",
+    "watch:blocks": "wp-scripts start",
+    "build:scss": "sass src/blocks/teacher-profile:build/teacher-profile-styles --style=compressed",
+    "watch:scss": "sass src/blocks/teacher-profile:build/teacher-profile-styles --watch",
+    "watch": "npm-run-all --parallel watch:css watch:blocks watch:scss",
+    "dev": "npm-run-all --parallel dev:css watch:blocks watch:scss",
+    "build": "npm-run-all -s clean build:css build:blocks build:scss",
+    "compile:rtl": "rtlcss assets/css/base.css assets/css/base-rtl.css",
+    "lint:js": "wp-scripts lint-js 'src/**/*.js'",
+    "clean": "rimraf assets/css assets/js build",
+    "bundle": "npm run build && dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist src postcss.config.js tailwind.config.js yarn.lock"
+  },
+  "dependencies": {
+    "@wordpress/core-data": "^7.34.0",
+    "@wordpress/icons": "^11.1.0",
+    "swiper": "^12.0.3"
+  }
+}

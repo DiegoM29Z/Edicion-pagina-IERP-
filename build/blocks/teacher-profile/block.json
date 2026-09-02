@@ -1,0 +1,96 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "edusiteco/teacher-profile",
+  "title": "Perfil de Profesor",
+  "category": "edusiteco-blocks",
+  "icon": "admin-users",
+  "description": "Muestra el perfil del profesor actual (usuario logueado)",
+  "keywords": [
+    "profesor",
+    "teacher",
+    "perfil",
+    "profile"
+  ],
+  "version": "1.0.0",
+  "textdomain": "edusiteco",
+  "attributes": {
+    "gap": {
+      "type": "number",
+      "default": 4
+    },
+    "avatarSize": {
+      "type": "number",
+      "default": 128
+    },
+    "avatarRounded": {
+      "type": "string",
+      "default": "lg"
+    },
+    "avatarBorder": {
+      "type": "boolean",
+      "default": true
+    },
+    "direction": {
+      "type": "string",
+      "default": "horizontal"
+    },
+    "alignment": {
+      "type": "string",
+      "default": "start"
+    },
+    "nameSize": {
+      "type": "string",
+      "default": "text-lg"
+    },
+    "nameWeight": {
+      "type": "string",
+      "default": "font-normal"
+    },
+    "showEmail": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSubject": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "hoverEffect": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": true,
+    "color": {
+      "background": true,
+      "text": true,
+      "link": false
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "border": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
+    },
+    "shadow": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

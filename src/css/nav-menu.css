@@ -1,0 +1,332 @@
+/**
+ * Edusiteco - Mejoras de Navegación
+ * Optimiza colores, contraste y transiciones del menú
+ * Considera: imagen de cabecera + modo oscuro
+ */
+
+/* ========================================
+   MEJORAS GENERALES DEL HEADER
+   ======================================== */
+
+/* Header con imagen - overlay para mejor legibilidad */
+.has-header-image {
+    position: relative;
+}
+
+.has-header-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.has-header-image > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================
+   DESKTOP MENU - COLORES MEJORADOS
+   ======================================== */
+
+/* Sin imagen - modo claro */
+.no-header-image .header-group a {
+    position: relative;
+    padding: 0.5rem 0.75rem;
+}
+
+.no-header-image .header-group:hover .underline-link::after {
+    transform: scaleX(1);
+}
+
+/* Con imagen - siempre blanco con sombra */
+.has-header-image .header-group > a {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.has-header-image .header-group > a:hover {
+    color: #fef08a; /* yellow-200 */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.has-header-image .header-group > a:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 
+        0 0 0 2px rgba(255, 255, 255, 0.5),
+        0 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   SUBMENU MEJORADO
+   ======================================== */
+
+/* Submenu general - transición suave */
+.header-group .submenu {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header-group:hover .submenu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Con imagen - submenu semi-transparente */
+.has-header-image .header-group .submenu {
+    background-color: rgba(30, 41, 59, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Sin imagen - submenu normal */
+.no-header-image .header-group .submenu {
+    background-color: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgb(226, 232, 240);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.dark .no-header-image .header-group .submenu {
+    background-color: rgba(30, 41, 59, 0.98);
+    border-color: rgb(74, 85, 104);
+}
+
+/* Items del submenu */
+.submenu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.125rem;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Con imagen - items siempre oscuros */
+.has-header-image .submenu a {
+    color: rgb(237 242 247 / var(--tw-text-opacity, 1))  !important;
+    background-color: transparent;
+}
+
+.has-header-image .submenu a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color:  rgb(237 242 247 / var(--tw-text-opacity, 1)) !important;
+}
+
+/* Sin imagen - items con colores de tema */
+.no-header-image .submenu a {
+    color: rgb(26, 32, 44);
+}
+
+.no-header-image .submenu a:hover {
+    background-color: hsl(var(--color-brand-primary) / 0.1);
+    color: hsl(var(--color-brand-primary));
+}
+
+.dark .no-header-image .submenu a {
+    color: rgb(237, 242, 247);
+}
+
+.dark .no-header-image .submenu a:hover {
+    background-color: hsl(var(--color-brand-primary) / 0.2);
+    color: hsl(var(--color-brand-primary-300));
+}
+
+/* ========================================
+   MOBILE MENU MEJORADO
+   ======================================== */
+
+/* Con imagen */
+.has-header-image #main-mobile-menu {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.has-header-image #main-mobile-menu a,
+.has-header-image #main-mobile-menu button {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+}
+
+.has-header-image #main-mobile-menu a:hover,
+.has-header-image #main-mobile-menu button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.has-header-image #main-mobile-menu a:active,
+.has-header-image #main-mobile-menu button:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Sin imagen */
+.no-header-image #main-mobile-menu {
+    background-color: rgb(255, 255, 255);
+}
+
+.dark .no-header-image #main-mobile-menu {
+    background-color: rgb(26, 32, 44);
+}
+
+/* ========================================
+   TOGGLE BUTTON (Ícono expand_more)
+   ======================================== */
+
+.mobile-toggle {
+    transition: all 0.2s ease;
+}
+
+.mobile-toggle.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Con imagen */
+.has-header-image .mobile-toggle {
+    color: #ffffff;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.has-header-image .mobile-toggle:active {
+    transform: scale(0.95);
+}
+
+/* ========================================
+   UNDERLINE LINK EFFECT MEJORADO
+   ======================================== */
+
+.header-group .underline-link {
+    position: relative;
+    text-decoration: none;
+}
+
+.header-group .underline-link::after {
+    content: '';
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Con imagen */
+.has-header-image .header-group .underline-link::after {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.has-header-image .header-group:hover .underline-link::after {
+    background-color: #fef08a;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Sin imagen */
+.no-header-image .header-group .underline-link::after {
+    background-color: hsl(var(--color-brand-primary));
+}
+
+.dark .no-header-image .header-group .underline-link::after {
+    background-color: hsl(var(--color-brand-primary-300));
+}
+
+.no-header-image .header-group:hover .underline-link::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* ========================================
+   DROPDOWN ICON ROTATIONS
+   ======================================== */
+
+.header-group .material-icons {
+    transition: transform 0.2s ease;
+}
+
+.header-group:hover .material-icons {
+    transform: rotate(180deg);
+}
+
+/* Con imagen */
+.has-header-image .header-group .material-icons {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* ========================================
+   ACCESIBILIDAD Y FOCUS VISIBLE
+   ======================================== */
+
+.header-group a:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.has-header-image .header-group a:focus-visible {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.no-header-image .header-group a:focus-visible {
+    box-shadow: 0 0 0 2px hsl(var(--color-brand-primary) / 0.5);
+}
+
+/* ========================================
+   RESPONSIVE IMPROVEMENTS
+   ======================================== */
+
+@media (max-width: 1023px) {
+    .header-group .submenu {
+        display: none !important;
+    }
+
+    .has-header-image #main-mobile-menu {
+        backdrop-filter: blur(8px);
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* ========================================
+   TRANSICIONES SUAVES
+   ======================================== */
+
+.header-group a,
+.mobile-toggle,
+#main-mobile-menu a {
+    position: relative;
+}
+
+/* Prevent motion para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+    .header-group .submenu,
+    .header-group .underline-link::after,
+    .header-group .material-icons,
+    .mobile-toggle {
+        transition: none !important;
+        animation: none !important;
+    }
+}

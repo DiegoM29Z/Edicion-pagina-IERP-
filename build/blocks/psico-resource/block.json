@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "edusiteco/psico-recursos",
+  "title": "Recursos Psicoeducativos",
+  "icon": "book",
+  "category": "edusiteco-blocks",
+  "description": "Lista de recursos descargables para estudiantes o familias.",
+  "supports": {
+    "html": false,
+    "align": [
+      "full",
+      "wide"
+    ]
+  },
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "default": "Recursos Psicoeducativos"
+    },
+    "sectionDescription": {
+      "type": "string",
+      "default": ""
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "imageHeight": {
+      "type": "number",
+      "default": 192
+    },
+    "shadowDepth": {
+      "type": "number",
+      "default": 1
+    },
+    "items": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

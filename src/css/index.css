@@ -1,0 +1,852 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Quartzo Bold */
+@font-face {
+  font-family: 'Quartzo-Bold';
+  src: url('../fonts/QuartzoBold-W9lv.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Plus Jakarta Sans - Configuración completa */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {    
+    /* PALETA DE COLORES - Modo Claro */
+    /* Color base en HSL */
+    
+    /* PRIMARY - #0367A6 (199 100% 33%) */
+    --color-brand-primary: 199 100% 33%;
+    --color-brand-primary-50: 199 100% 95%;
+    --color-brand-primary-100: 199 100% 90%;
+    --color-brand-primary-200: 199 100% 80%;
+    --color-brand-primary-300: 199 100% 70%;
+    --color-brand-primary-400: 199 100% 50%;
+    --color-brand-primary-600: 199 100% 25%;
+    --color-brand-primary-700: 199 100% 20%;
+    --color-brand-primary-800: 199 100% 15%;
+    --color-brand-primary-900: 199 100% 10%;
+    
+    /* SECONDARY - #03658C (193 95% 28%) */
+    --color-brand-secondary: 193 95% 28%;
+    --color-brand-secondary-50: 193 95% 95%;
+    --color-brand-secondary-100: 193 95% 90%;
+    --color-brand-secondary-200: 193 95% 80%;
+    --color-brand-secondary-300: 193 95% 70%;
+    --color-brand-secondary-400: 193 95% 45%;
+    --color-brand-secondary-600: 193 95% 22%;
+    --color-brand-secondary-700: 193 95% 18%;
+    --color-brand-secondary-800: 193 95% 14%;
+    --color-brand-secondary-900: 193 95% 10%;
+    
+    /* ACCENT - #6C8C3B (81 44% 39%) */
+    --color-brand-accent: 81 44% 39%;
+    --color-brand-accent-50: 81 44% 95%;
+    --color-brand-accent-100: 81 44% 90%;
+    --color-brand-accent-200: 81 44% 80%;
+    --color-brand-accent-300: 81 44% 65%;
+    --color-brand-accent-400: 81 44% 52%;
+    --color-brand-accent-600: 81 44% 32%;
+    --color-brand-accent-700: 81 44% 26%;
+    --color-brand-accent-800: 81 44% 20%;
+    --color-brand-accent-900: 81 44% 15%;
+    
+    /* WARNING - #F28705 (27 97% 49%) */
+    --color-brand-warning: 27 97% 49%;
+    --color-brand-warning-50: 27 97% 95%;
+    --color-brand-warning-100: 27 97% 90%;
+    --color-brand-warning-200: 27 97% 80%;
+    --color-brand-warning-300: 27 97% 70%;
+    --color-brand-warning-400: 27 97% 60%;
+    --color-brand-warning-600: 27 97% 40%;
+    --color-brand-warning-700: 27 97% 32%;
+    --color-brand-warning-800: 27 97% 24%;
+    --color-brand-warning-900: 27 97% 18%;
+    
+    /* DANGER - #D96907 (24 95% 44%) */
+    --color-brand-danger: 24 95% 44%;
+    --color-brand-danger-50: 24 95% 95%;
+    --color-brand-danger-100: 24 95% 90%;
+    --color-brand-danger-200: 24 95% 80%;
+    --color-brand-danger-300: 24 95% 70%;
+    --color-brand-danger-400: 24 95% 57%;
+    --color-brand-danger-600: 24 95% 36%;
+    --color-brand-danger-700: 24 95% 28%;
+    --color-brand-danger-800: 24 95% 22%;
+    --color-brand-danger-900: 24 95% 16%;
+}
+
+/* Modo Oscuro */
+.dark {
+    /* PRIMARY */
+    --color-brand-primary: 199 100% 45%;
+    --color-brand-primary-50: 199 100% 10%;
+    --color-brand-primary-100: 199 100% 15%;
+    --color-brand-primary-200: 199 100% 20%;
+    --color-brand-primary-300: 199 100% 30%;
+    --color-brand-primary-400: 199 100% 40%;
+    --color-brand-primary-600: 199 100% 55%;
+    --color-brand-primary-700: 199 100% 65%;
+    --color-brand-primary-800: 199 100% 75%;
+    --color-brand-primary-900: 199 100% 85%;
+    
+    /* SECONDARY */
+    --color-brand-secondary: 193 95% 40%;
+    --color-brand-secondary-50: 193 95% 10%;
+    --color-brand-secondary-100: 193 95% 14%;
+    --color-brand-secondary-200: 193 95% 18%;
+    --color-brand-secondary-300: 193 95% 25%;
+    --color-brand-secondary-400: 193 95% 35%;
+    --color-brand-secondary-600: 193 95% 50%;
+    --color-brand-secondary-700: 193 95% 60%;
+    --color-brand-secondary-800: 193 95% 70%;
+    --color-brand-secondary-900: 193 95% 80%;
+    
+    /* ACCENT */
+    --color-brand-accent: 81 44% 55%;
+    --color-brand-accent-50: 81 44% 15%;
+    --color-brand-accent-100: 81 44% 20%;
+    --color-brand-accent-200: 81 44% 26%;
+    --color-brand-accent-300: 81 44% 35%;
+    --color-brand-accent-400: 81 44% 45%;
+    --color-brand-accent-600: 81 44% 65%;
+    --color-brand-accent-700: 81 44% 75%;
+    --color-brand-accent-800: 81 44% 85%;
+    --color-brand-accent-900: 81 44% 90%;
+    
+    /* WARNING */
+    --color-brand-warning: 27 97% 60%;
+    --color-brand-warning-50: 27 97% 18%;
+    --color-brand-warning-100: 27 97% 24%;
+    --color-brand-warning-200: 27 97% 32%;
+    --color-brand-warning-300: 27 97% 45%;
+    --color-brand-warning-400: 27 97% 52%;
+    --color-brand-warning-600: 27 97% 68%;
+    --color-brand-warning-700: 27 97% 75%;
+    --color-brand-warning-800: 27 97% 82%;
+    --color-brand-warning-900: 27 97% 88%;
+    
+    /* DANGER */
+    --color-brand-danger: 24 95% 58%;
+    --color-brand-danger-50: 24 95% 16%;
+    --color-brand-danger-100: 24 95% 22%;
+    --color-brand-danger-200: 24 95% 28%;
+    --color-brand-danger-300: 24 95% 40%;
+    --color-brand-danger-400: 24 95% 50%;
+    --color-brand-danger-600: 24 95% 66%;
+    --color-brand-danger-700: 24 95% 74%;
+    --color-brand-danger-800: 24 95% 80%;
+    --color-brand-danger-900: 24 95% 86%;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-plus-jakarta text-gray-900 leading-relaxed;
+    min-height: max(55.25rem, 100dvh);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-gray-900;
+  }
+  
+  h1 { @apply text-3xl md:text-4xl; }
+  h2 { @apply text-2xl md:text-3xl; }
+  h3 { @apply text-xl md:text-2xl; }
+  h4 { @apply text-lg md:text-xl; }
+  h5 { @apply text-base md:text-lg; }
+  h6 { @apply text-sm md:text-base; }
+}
+
+/* Ejemplos de uso de los nuevos colores */
+.header-group .underline-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -0.25rem;
+  left: 0;
+  /* Usar el nuevo color primario */
+  background-color: hsl(var(--color-brand-primary));
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.submenu a:hover {
+  background-color: hsl(var(--color-brand-primary));
+}
+
+.header-group button:focus {
+  @apply outline-none ring-2 ring-offset-2;
+  ring-color: hsl(var(--color-brand-primary) / 0.5);
+}
+
+.header-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-top {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-delayed {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fade-in-left 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.8s ease-out forwards;
+}
+
+.animate-slide-in-top {
+  animation: slide-in-top 0.8s ease-out forwards;
+}
+
+.animate-slide-in-bottom {
+  animation: slide-in-bottom 0.8s ease-out forwards;
+}
+
+.animate-fade-in-delayed {
+  animation: fade-in-delayed 1.2s ease-out forwards;
+}
+
+.animate-fade-in-up,
+.animate-fade-in-left,
+.animate-fade-in-right,
+.animate-slide-in-top,
+.animate-slide-in-bottom {
+  opacity: 0;
+}
+
+.site-main section {
+  scroll-margin-top: 2rem;
+}
+
+audio:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.site-main * {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .comunicado-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .comunicado-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.comunicados-paginacion {
+  @apply py-4 flex justify-start;
+}
+
+.comunicados-paginacion .nav-links .nav-next a,
+.comunicados-paginacion .nav-links .nav-previous a {
+  @apply flex items-center text-slate-600 dark:text-text-dark hover:text-blue-600 transition-colors duration-300;
+}
+
+.comunicados-paginacion .nav-previous a::before {
+  content: '←';
+  background-color: #64748b;
+  color: white;
+  @apply w-6 h-6 rounded-full mr-2 flex items-center justify-center font-bold text-lg leading-none transition-colors duration-300;
+}
+
+.comunicados-paginacion .nav-next a::after {
+  content: '→';
+  background-color: #64748b;
+  color: white;
+  @apply w-8 h-8 rounded-full ml-2 flex items-center justify-center font-bold text-lg leading-none transition-colors duration-300;
+}
+
+.comunicados-paginacion .nav-previous a:hover::before,
+.comunicados-paginacion .nav-next a:hover::after {
+  /* Usar el nuevo color primario */
+  background-color: hsl(var(--color-brand-primary));
+  @apply dark:text-text-dark;
+}
+
+
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-float,
+  .animate-bounce,
+  .contacto-btn,
+  .cta-button,
+  .scroll-button,
+  .transform {
+    animation: none;
+    transition: none;
+  }
+}
+
+/*
+==========================================================================
+MAIN NAVIGATION STYLES - CORREGIDO
+==========================================================================
+*/
+@layer components {
+  /* Base styles for menu items */
+  .header-group{
+    list-style: none;
+  }
+  .header-group a {
+    @apply inline-flex items-center px-3 py-2;
+  }
+
+  .submenu a {
+    @apply block px-4 py-2 text-text-light dark:text-text-dark;
+  }
+
+  /* Submenu container - ESTILOS CORREGIDOS */
+  .header-group .submenu {
+    @apply absolute z-50 left-0 w-64 p-2 rounded-md shadow-xl ring-1 ring-black ring-opacity-5 border border-border-light dark:border-border-dark;
+    
+    /* Efecto cristal por defecto */
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* Default state: hidden */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    pointer-events: none;
+  }
+
+  /* Submenu en modo oscuro */
+  .dark .header-group .submenu {
+    background-color: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Submenu cuando hay imagen de cabecera */
+  .has-header-image .header-group .submenu {
+    background-color: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .has-header-image.dark .header-group .submenu {
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Submenu cuando NO hay imagen - ESTILO MINIMALISTA */
+  .no-header-image .header-group .submenu {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: none;
+    @apply shadow-lg;
+  }
+
+  .dark .no-header-image .header-group .submenu {
+    background-color: rgba(30, 41, 59, 0.98);
+    backdrop-filter: none;
+  }
+  
+  /* Submenu visibility on hover */
+  .header-group:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Underline animation for main links */
+  .header-group .underline-link {
+    @apply relative no-underline;
+  }
+
+  .header-group .underline-link::after {
+    content: '';
+    @apply absolute w-full h-[2px] left-0;
+    bottom: -0.25rem;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  /* Color del subrayado basado en contexto - CORREGIDO */
+  .has-header-image .header-group .underline-link::after {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .has-header-image .header-group:hover .underline-link::after {
+    background-color: hsl(var(--color-brand-primary-200));
+  }
+
+  /* Sin imagen - colores normales */
+  .no-header-image .header-group .underline-link::after {
+    background-color: hsl(var(--color-brand-primary));
+  }
+
+  .dark .no-header-image .header-group .underline-link::after {
+    background-color: hsl(var(--color-brand-primary-300));
+  }
+
+  .header-group:hover .underline-link::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  /* Estilos para enlaces del submenu - CORREGIDO PARA MEJOR VISIBILIDAD */
+  .submenu a {
+    @apply rounded-sm transition-colors duration-200;
+  }
+
+  .submenu a:hover {
+    background-color: hsl(var(--color-brand-primary) / 0.1);
+    color: hsl(var(--color-brand-primary));
+  }
+
+  .dark .submenu a:hover {
+    background-color: hsl(var(--color-brand-primary) / 0.2);
+    color: hsl(var(--color-brand-primary-300));
+  }
+
+  /* Mobile menu specific styles */
+  .mobile-toggle.text-brand-primary {
+    color: hsl(var(--color-brand-primary));
+  }
+
+  /* Menú móvil con imagen de cabecera - CORREGIDO */
+  .has-header-image #main-mobile-menu {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .has-header-image #main-mobile-menu a,
+  .has-header-image #main-mobile-menu button {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .has-header-image #main-mobile-menu a:hover,
+  .has-header-image #main-mobile-menu button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Menú móvil SIN imagen - estilo minimalista */
+  .no-header-image #main-mobile-menu {
+    @apply bg-background-light dark:bg-background-dark;
+  }
+
+  .mobile-toggle.rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  /* Remove borders from submenu items in mobile */
+  .bg-gray-50 a,
+  .dark .bg-gray-800 a {
+    border-bottom: none;
+  }
+
+  /* Styles for when a header image is present - MEJORADO */
+  .has-header-image .header-group > a,
+  .has-header-image .header-group > a span {
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  }
+
+  .has-header-image .header-group > a:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Asegurar que los enlaces del submenu sean visibles en todos los escenarios */
+  .has-header-image .submenu a {
+    color: hsl(var(--color-text-light)) !important;
+  }
+
+  .dark .has-header-image .submenu a {
+    color: hsl(var(--color-text-dark)) !important;
+  }
+
+  /* Estados hover en submenu con imagen */
+  .has-header-image .submenu a:hover {
+    color: hsl(var(--color-brand-primary)) !important;
+  }
+
+  .dark .has-header-image .submenu a:hover {
+    color: hsl(var(--color-brand-primary-300)) !important;
+  }
+
+  /* Hide desktop submenus on mobile */
+  @media (max-width: 768px) {
+    .header-group .submenu {
+      display: none;
+    }
+    
+    /* Ajustes específicos para móvil */
+    .has-header-image #main-mobile-menu {
+      background-color: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+    }
+  }
+}
+/* ============================================
+   PSICO RESOURCES BLOCK - DYNAMIC STYLES
+   ============================================ */
+
+/**
+ * Main section wrapper
+ * Transitions between light and dark modes
+ */
+.psico-resources-section {
+    background-color: hsl(var(--color-background-light) / 1);
+}
+
+.dark .psico-resources-section {
+    background-color: hsl(var(--color-background-dark) / 1);
+}
+
+/**
+ * Resource card styling
+ * - Base shadow applied via inline style in render.php
+ * - Hover effect with scale transform
+ */
+.psico-resource-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid hsl(var(--color-border-light));
+}
+
+.psico-resource-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/**
+ * Dark mode card adjustments
+ */
+.dark .psico-resource-card {
+    background-color: hsl(var(--color-gray-800));
+    border-color: hsl(var(--color-border-dark));
+}
+
+.dark .psico-resource-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/**
+ * Resource type badge styling
+ * - Responsive text size
+ * - Color coordination with brand primary
+ */
+.psico-resource-card span[class*="bg-brand"] {
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+/**
+ * Image responsive behavior
+ * - Maintains 16:9 aspect ratio via height control
+ * - Hover zoom effect for visual feedback
+ */
+.psico-resource-card img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+}
+
+.psico-resource-card img:hover {
+    transform: scale(1.1);
+}
+
+/**
+ * Action button styles
+ * - Gradient shimmer effect on hover
+ * - Smooth color transitions
+ */
+.psico-resource-card a[target="_blank"] {
+    position: relative;
+    overflow: hidden;
+}
+
+.psico-resource-card a[target="_blank"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.psico-resource-card a[target="_blank"]:hover::before {
+    left: 100%;
+}
+
+/**
+ * Mobile responsive adjustments
+ * - Single column layout
+ * - Reduced padding for smaller screens
+ */
+@media (max-width: 640px) {
+    .psico-resources-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .psico-resource-card {
+        padding: 1rem;
+        min-height: auto;
+    }
+    
+    .psico-resource-card h3 {
+        font-size: 1rem;
+    }
+}
+
+/**
+ * Dark mode hover state optimization
+ */
+.dark .psico-resource-card:hover {
+    border-color: hsl(var(--color-brand-primary) / 0.5);
+}
+
+/**
+ * Animation queue for staggered card appearance
+ * Each card delays by 100ms for smooth entrance
+ */
+@keyframes resource-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.psico-resource-card {
+    animation: resource-slide-in 0.5s ease-out forwards;
+}
+
+.psico-resource-card:nth-child(1) { animation-delay: 0s; }
+.psico-resource-card:nth-child(2) { animation-delay: 0.1s; }
+.psico-resource-card:nth-child(3) { animation-delay: 0.2s; }
+.psico-resource-card:nth-child(4) { animation-delay: 0.3s; }
+.psico-resource-card:nth-child(5) { animation-delay: 0.4s; }
+.psico-resource-card:nth-child(6) { animation-delay: 0.5s; }
+.psico-resource-card:nth-child(7) { animation-delay: 0.6s; }
+.psico-resource-card:nth-child(8) { animation-delay: 0.7s; }
+
+/**
+ * Tablet and above optimizations
+ */
+@media (min-width: 768px) {
+    .psico-resources-section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    .psico-resource-card {
+        padding: 1.5rem;
+    }
+}
+
+/**
+ * Prefers reduced motion - Respect user accessibility settings
+ */
+@media (prefers-reduced-motion: reduce) {
+    .psico-resource-card {
+        animation: none;
+        transition: none;
+    }
+    
+    .psico-resource-card:hover {
+        transform: none;
+    }
+}

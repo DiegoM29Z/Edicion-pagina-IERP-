@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "edusiteco/psico-actividades",
+  "title": "Actividades y Talleres",
+  "icon": "calendar-alt",
+  "category": "edusiteco-blocks",
+  "description": "Sección de talleres o actividades del equipo de psicoorientación con diseño minimalista.",
+  "supports": {
+    "html": false,
+    "align": ["full", "wide"]
+  },
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "default": "Actividades y Talleres"
+    },
+    "sectionDescription": {
+      "type": "string",
+      "default": ""
+    },
+    "items": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}
