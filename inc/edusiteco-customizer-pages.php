@@ -54,7 +54,7 @@ function edusiteco_simbolos_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_setting('escudo_description', array(
-        'default' => 'Nuestro escudo representa la identidad y valores de la institución. Los colores azul y blanco simbolizan la sabiduría y la pureza. El libro abierto representa el conocimiento, la antorcha la luz del aprendizaje, y el laurel el éxito académico. Cada elemento refleja nuestro compromiso con la excelencia educativa y la formación integral de nuestros estudiantes.',
+        'default' => 'Cada elemento del escudo del Colegio Rafael Pombo representa una parte de nuestra identidad. El búho, símbolo de la sabiduría, nos invita a observar, aprender y pensar. El birrete representa la culminación de los logros académicos, mientras la rama de olivo expresa paz, buenas noticias y victoria. La pluma y el tintero rinden homenaje a Rafael Pombo, escritor, poeta y fabulista colombiano. La cinta resume nuestro compromiso con la formación integral. Todo está unido por el círculo azul, símbolo de unidad y armonía. Así, sus colores y figuras forman un emblema moderno y lleno de vida, que refleja los valores que orientan a nuestra comunidad educativa.',
         'transport' => 'postMessage',
     ));
 

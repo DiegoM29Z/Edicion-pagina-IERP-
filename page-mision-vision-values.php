@@ -88,7 +88,7 @@
                             <?php
                             $mision_text = get_theme_mod(
                                 'mision_text',
-                                'Formar integralmente a nuestros estudiantes mediante una educación de calidad basada en valores, desarrollando sus capacidades intelectuales, emocionales y sociales para que se conviertan en ciudadanos responsables, críticos y comprometidos con la transformación positiva de la sociedad.'
+                                'En la Institución Educativa Rafael Pombo formamos integralmente a nuestros estudiantes mediante una educación de calidad, humanista e inclusiva, fundamentada en el respeto, la responsabilidad, la solidaridad y la honestidad. Potenciamos sus capacidades intelectuales, emocionales, artísticas y sociales para que desarrollen pensamiento crítico, amen el conocimiento y participen activamente en la construcción de una sociedad más justa, pacífica y sostenible.'
                             );
                             echo esc_html($mision_text);
                             ?>
@@ -199,7 +199,7 @@
                             <?php
                             $vision_text = get_theme_mod(
                                 'vision_text',
-                                'Ser reconocidos como una institución educativa líder en la formación de personas íntegras, innovadoras y comprometidas con el desarrollo sostenible, destacándonos por nuestra excelencia académica, inclusión y contribución al progreso de la comunidad.'
+                                'Para el año 2030, la Institución Educativa Rafael Pombo será reconocida por su excelencia académica, innovación pedagógica y compromiso con la formación de ciudadanos íntegros, autónomos y solidarios. Seremos una comunidad educativa que aprende de manera permanente, aprovecha responsablemente la tecnología, valora la diversidad y contribuye al bienestar, la cultura y el desarrollo sostenible de nuestro entorno.'
                             );
                             echo esc_html($vision_text);
                             ?>
@@ -299,14 +299,14 @@
                 <?php
                 $cita_text = get_theme_mod(
                     'cita_text',
-                    'Educar con valores es formar el corazón del conocimiento, sembrando en cada estudiante la semilla de un futuro mejor.'
+                    'En la Institución Educativa Rafael Pombo educamos con saber, sensibilidad y esperanza para transformar cada proyecto de vida.'
                 );
                 echo esc_html($cita_text);
                 ?>
             </blockquote>
             <?php
-            $cita_autor = get_theme_mod('cita_autor', 'Colegio San Martín');
-            $cita_cargo = get_theme_mod('cita_cargo', 'Lema Institucional');
+            $cita_autor = get_theme_mod('cita_autor', 'Institución Educativa Rafael Pombo');
+            $cita_cargo = get_theme_mod('cita_cargo', 'Identidad institucional');
             ?>
             <div class="border-t border-blue-400 pt-6">
                 <p class="text-lg font-semibold"><?php echo esc_html($cita_autor); ?></p>

@@ -32,18 +32,14 @@ get_header();
 					while ($comunicados_destacados->have_posts()):
 						$comunicados_destacados->the_post();
 						$has_thumbnail = has_post_thumbnail();
-						$background_style = '';
-						if ($has_thumbnail) {
-							$background_style = 'style="background-image: url(\'' . esc_url(get_the_post_thumbnail_url(get_the_ID(), 'large')) . '\')"';
-						}
+						$background_image = $has_thumbnail
+							? get_the_post_thumbnail_url(get_the_ID(), 'large')
+							: get_theme_file_uri('assets/img/hero-rafael-pombo.jpg');
 						?>
 						<div class="swiper-slide relative">
-							<div class="bg-cover bg-center h-96 lg:h-[600px] <?php echo !$has_thumbnail ? 'bg-gray-700' : ''; ?>"
-								<?php echo $background_style; ?>>
-
-								<?php if (!$has_thumbnail): ?>
-									<div class="absolute inset-0 bg-gradient-custom bg-opacity-50"></div>
-								<?php endif; ?>
+							<div class="relative isolate overflow-hidden h-96 lg:h-[600px]">
+								<div class="absolute inset-0 scale-105 bg-cover bg-center" style="background-image: url('<?php echo esc_url($background_image); ?>'); filter: blur(2px);"></div>
+								<div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(8, 30, 62, 0.62), rgba(14, 50, 91, 0.48), rgba(12, 57, 94, 0.38));"></div>
 
 								<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
 									<div class="text-white max-w-2xl">
@@ -67,15 +63,22 @@ get_header();
 					endwhile;
 					wp_reset_postdata();
 				else:
-					// Fallback: si no hay comunicados destacados, muestra un slide por defecto
+					$hero_images = array(
+						get_theme_file_uri('assets/img/hero-rafael-pombo.jpg'),
+						get_theme_file_uri('assets/img/hero-rafael-pombo-2.jpg'),
+						get_theme_file_uri('assets/img/hero-rafael-pombo-3.jpg'),
+						get_theme_file_uri('assets/img/hero-rafael-pombo-4.jpg'),
+					);
+					foreach ($hero_images as $hero_image):
 					?>
 					<div class="swiper-slide relative">
-						<div class="bg-cover bg-center h-96 lg:h-[600px]"
-							style="background-image: url('<?php echo get_theme_file_uri("assets/img/hero.jpg"); ?>')">
-							<div class="absolute inset-0 bg-gradient-custom bg-opacity-40"></div>
+						<div class="relative isolate overflow-hidden h-96 lg:h-[600px]">
+							<div class="absolute inset-0 scale-105 bg-cover bg-center"
+								style="background-image: url('<?php echo esc_url($hero_image); ?>'); filter: blur(2px);"></div>
+							<div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(8, 30, 62, 0.62), rgba(14, 50, 91, 0.48), rgba(12, 57, 94, 0.38));"></div>
 							<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
 								<div class="text-white max-w-2xl">
-									<h1 class="text-4xl lg:text-6xl font-bold font-display mb-4">Bienvenidos a
+									<h1 class="text-4xl lg:text-6xl font-bold font-display mb-4">
 										<?php echo get_bloginfo('name'); ?>
 									</h1>
 									<p class="text-xl lg:text-2xl mb-8">Formando líderes para el futuro con excelencia
@@ -84,6 +87,7 @@ get_header();
 							</div>
 						</div>
 					</div>
+					<?php endforeach; ?>
 				<?php endif; ?>
 			</div>
 
@@ -94,123 +98,90 @@ get_header();
 		</div>
 	</section>
 
-	<!-- Sección de Comunicados -->
-	<section class="py-16 bg-background-light dark:bg-background-dark">
+	<!-- Sección de Niveles Académicos -->
+	<section class="py-16 overflow-hidden bg-white dark:bg-background-dark">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center mb-12">
-				<h2 class="text-3xl lg:text-4xl font-bold text-text-light dark:text-text-dark font-display mb-4">
-					Comunicados Recientes</h2>
-				<p class="text-text-light dark:text-text-dark max-w-2xl mx-auto">Mantente informado sobre las
-					últimas noticias y anuncios de nuestra institución</p>
-			</div>
+			<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+				<div class="lg:col-span-4 relative z-20">
+					<p class="text-brand-primary font-semibold tracking-wide uppercase mb-4 flex items-center gap-2">
+						<span class="material-icons text-base">menu_book</span>
+						Niveles académicos
+					</p>
+					<h2 class="text-3xl lg:text-5xl font-bold text-text-light dark:text-text-dark font-display mb-10 leading-tight">
+						Nuestros Servicios<br>Educativos
+					</h2>
+					<a href="#niveles-educativos" class="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-4 rounded-md font-bold uppercase transition-colors inline-flex items-center">
+						Ampliar la información
+						<span class="material-icons ml-2">arrow_forward</span>
+					</a>
+				</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-				<?php
-				// Query para los últimos 4 comunicados
-				$comunicados = new WP_Query(array(
-					'post_type' => 'comunicado',
-					'posts_per_page' => 4,
-				));
-
-				if ($comunicados->have_posts()):
-					while ($comunicados->have_posts()):
-						$comunicados->the_post();
-						?>
-						<article
-							class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow border border-border-light dark:border-border-dark">
-							<?php if (has_post_thumbnail()): ?>
-								<div class="h-48 overflow-hidden">
-									<img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>"
-										class="w-full h-full object-cover" />
-								</div>
-							<?php else: ?>
-								<div class="h-48 relative overflow-hidden">
-									<!-- Fondo con SVG -->
-									<div
-										class="h-full bg-brand-primary text-white/10 transition-transform duration-500 group-hover:scale-105">
-										<svg viewBox="0 0 1000 500" fill="currentColor" class="w-full h-full">
-											<circle cx="200" cy="100" r="80" opacity="0.1" />
-											<circle cx="800" cy="150" r="120" opacity="0.05" />
-											<circle cx="400" cy="400" r="100" opacity="0.08" />
-										</svg>
-									</div>
-									<!-- Texto superpuesto -->
-									<div class="absolute inset-0 flex items-center justify-center p-4 text-white">
-										<div class="text-center">
-											<span class="block text-lg font-semibold">Comunicado</span>
-											<span
-												class="block text-sm opacity-80 uppercase font-bold"><?php echo get_bloginfo('name'); ?></span>
-										</div>
-									</div>
-								</div>
-							<?php endif; ?>
-
-							<div class="p-6">
-								<h3 class="text-xl font-semibold text-text-light dark:text-text-dark mb-2 line-clamp-2">
-									<a href="<?php the_permalink(); ?>" class="hover:text-brand-primary transition-colors">
-										<?php the_title(); ?>
-									</a>
-								</h3>
-
-								<div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
-									<span class="material-icons text-xs mr-1">event</span>
-									<time datetime="<?php echo get_the_date('c'); ?>">
-										<?php echo get_the_date(); ?>
-									</time>
-								</div>
-
-								<p class="text-text-light dark:text-text-dark text-sm line-clamp-3">
-									<?php echo wp_trim_words(get_the_excerpt(), 15); ?>
-								</p>
-
-								<a href="<?php the_permalink(); ?>"
-									class="inline-block mt-4 text-brand-primary hover:text-brand-secondary font-semibold text-sm transition-colors">
-									Leer más →
-								</a>
-							</div>
-						</article>
-						<?php
-					endwhile;
-					wp_reset_postdata();
-				else:
+				<div id="niveles-educativos" class="lg:col-span-8 relative min-w-0 pt-12">
+					<div class="pointer-events-none absolute -left-16 top-3 h-32 w-56 rounded-r-[42px] border-b-2 border-r-2 border-t-2 border-gray-200 dark:border-gray-700"></div>
+					<div class="absolute top-0 right-0 z-20 flex gap-3">
+						<button type="button" id="niveles-prev" class="w-10 h-10 rounded-lg bg-gray-50 dark:bg-gray-800 text-brand-primary shadow-sm" aria-label="Nivel anterior">
+							<span class="material-icons">arrow_back</span>
+						</button>
+						<button type="button" id="niveles-next" class="w-10 h-10 rounded-lg bg-gray-50 dark:bg-gray-800 text-brand-primary shadow-sm" aria-label="Siguiente nivel">
+							<span class="material-icons">arrow_forward</span>
+						</button>
+					</div>
+					<div id="niveles-carousel" class="relative overflow-hidden">
+					<?php
+					$niveles_educativos = array(
+						array('icon' => 'co_present', 'title' => 'Educación Básica Primaria', 'age' => 'Grados 1° a 5°, Edad 6 a 10 años'),
+						array('icon' => 'cast_for_education', 'title' => 'Educación Básica Secundaria', 'age' => 'Grados 6° a 9°, Edad 11 a 14 años'),
+						array('icon' => 'school', 'title' => 'Media Académica', 'age' => 'Grados 10° y 11°, Edad 15 a 16 años'),
+						array('icon' => 'edit_note', 'title' => 'Educación Preescolar, Materno', 'age' => 'Edad 2 años'),
+						array('icon' => 'child_care', 'title' => 'Prejardín', 'age' => 'Edad 3 años'),
+						array('icon' => 'psychology', 'title' => 'Jardín', 'age' => 'Edad 4 años'),
+						array('icon' => 'auto_stories', 'title' => 'Transición', 'age' => 'Edad 5 años'),
+					);
+					foreach (array_chunk($niveles_educativos, 4) as $pagina_index => $pagina_niveles) :
 					?>
-					<!-- Comunicados de ejemplo cuando no hay posts -->
-					<?php for ($i = 1; $i <= 4; $i++): ?>
-						<article
-							class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow border border-border-light dark:border-border-dark">
-							<div class="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-								<span class="text-gray-400 dark:text-gray-500 material-icons text-4xl">article</span>
-							</div>
-							<div class="p-6">
-								<h3 class="text-xl font-semibold text-text-light dark:text-text-dark mb-2">
-									Comunicado Importante <?php echo $i; ?>
-								</h3>
-								<div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
-									<span class="material-icons text-xs mr-1">event</span>
-									<time><?php echo date('j M Y'); ?></time>
-								</div>
-								<p class="text-text-light dark:text-text-dark text-sm">
-									Información relevante sobre actividades y anuncios de la institución educativa.
-								</p>
-								<a href="#"
-									class="inline-block mt-4 text-brand-primary hover:text-brand-secondary font-semibold text-sm transition-colors">
-									Leer más →
-								</a>
-							</div>
-						</article>
-					<?php endfor; ?>
-				<?php endif; ?>
-			</div>
-
-			<div class="text-center">
-				<a href="<?php echo get_post_type_archive_link('comunicado'); ?>"
-					class="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center">
-					Ver todos los comunicados
-					<span class="material-icons ml-2">arrow_forward</span>
-				</a>
+						<div class="nivel-page grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 <?php echo $pagina_index === 0 ? '' : 'hidden'; ?>">
+							<?php foreach ($pagina_niveles as $nivel) : ?>
+								<article class="relative z-10 h-[300px] bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm p-5 text-center flex flex-col items-center justify-center">
+									<div class="w-16 h-16 rounded-full bg-blue-50 dark:bg-blue-900/30 text-brand-primary flex items-center justify-center mb-5">
+										<span class="material-icons text-4xl"><?php echo esc_html($nivel['icon']); ?></span>
+									</div>
+									<h3 class="text-lg font-bold text-text-light dark:text-text-dark leading-snug"><?php echo esc_html($nivel['title']); ?></h3>
+									<p class="mt-2 text-gray-600 dark:text-gray-300"><?php echo esc_html($nivel['age']); ?></p>
+								</article>
+								<?php endforeach; ?>
+						</div>
+					<?php endforeach; ?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const carousel = document.getElementById('niveles-carousel');
+			if (!carousel) return;
+
+			const pages = carousel.querySelectorAll('.nivel-page');
+			const previousButton = document.getElementById('niveles-prev');
+			const nextButton = document.getElementById('niveles-next');
+			let currentPage = 0;
+
+			function showPage(pageIndex) {
+				currentPage = (pageIndex + pages.length) % pages.length;
+				pages.forEach(function (page, index) {
+					page.classList.toggle('hidden', index !== currentPage);
+				});
+			}
+
+			previousButton.addEventListener('click', function () {
+				showPage(currentPage - 1);
+			});
+			nextButton.addEventListener('click', function () {
+				showPage(currentPage + 1);
+			});
+		});
+	</script>
 
 	<!-- Sección de Sedes -->
 	<section id="campuses" class="py-16 bg-gray-50 dark:bg-gray-900">
