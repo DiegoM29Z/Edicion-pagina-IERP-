@@ -7,10 +7,26 @@
 
 <?php get_header(); ?>
 
+<?php
+$simbolos_hero_image = edusiteco_symbol_image(
+    'simbolos_hero_image',
+    get_theme_file_uri('assets/img/hero-simbolos.jpg')
+);
+$escudo_image = edusiteco_symbol_image(
+    'escudo_image',
+    get_theme_file_uri('assets/img/rafaelpombo-removebg-preview.png')
+);
+$bandera_image = edusiteco_symbol_image(
+    'bandera_image',
+    get_theme_file_uri('Imagenes/bandera.png')
+);
+?>
+
 <main id="primary" class="site-main">
     <!-- Hero Section -->
-    <section class="relative h-[50vh] bg-cover bg-center flex items-center justify-center text-white"
-        style="background-image: linear-gradient(rgba(51, 102, 204, 0.85), rgba(51, 102, 204, 0.9)), url('<?php echo esc_url(get_theme_mod('simbolos_hero_image', get_template_directory_uri() . '/assets/img/hero-simbolos.jpg')); ?>');">
+    <section class="relative isolate overflow-hidden h-[50vh] flex items-center justify-center text-white">
+        <div class="absolute inset-0 scale-110 bg-cover bg-center" style="background-image: url('<?php echo esc_url($simbolos_hero_image); ?>'); filter: blur(12px);"></div>
+        <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(20, 67, 130, 0.94), rgba(51, 102, 204, 0.88), rgba(20, 67, 130, 0.94));"></div>
         <div class="relative z-10 text-center px-4">
             <h1 class="text-4xl md:text-6xl font-bold mb-4"><?php the_title(); ?></h1>
             <p class="text-xl md:text-2xl opacity-90">
@@ -26,8 +42,8 @@
                 <div class="lg:w-2/5 text-center">
                     <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 shadow-lg">
                         <img 
-                            src="<?php echo esc_url(get_theme_mod('escudo_image', 'https://placehold.co/400x300/E2E8F0/4A5568?text=Escudo')); ?>" 
-                            alt="<?php echo esc_attr(get_theme_mod('escudo_alt', 'Escudo del Colegio San Martín')); ?>"
+                            src="<?php echo esc_url($escudo_image); ?>" 
+                            alt="<?php echo esc_attr(get_theme_mod('escudo_alt', 'Escudo del Colegio Rafael Pombo')); ?>"
                             class="w-full h-64 mx-auto object-contain"
                         >
                     </div>
@@ -41,7 +57,7 @@
                             <p id="escudo-description" class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 <?php 
                                 echo wp_kses_post(get_theme_mod('escudo_description', 
-                                    'Nuestro escudo representa la identidad y valores de la institución. Los colores azul y blanco simbolizan la sabiduría y la pureza. El libro abierto representa el conocimiento, la antorcha la luz del aprendizaje, y el laurel el éxito académico. Cada elemento refleja nuestro compromiso con la excelencia educativa y la formación integral de nuestros estudiantes.'
+                                    'Cada elemento del escudo del Colegio Rafael Pombo representa una parte de nuestra identidad. El búho, símbolo de la sabiduría, nos invita a observar, aprender y pensar. El birrete representa la culminación de los logros académicos, mientras la rama de olivo expresa paz, buenas noticias y victoria. La pluma y el tintero rinden homenaje a Rafael Pombo, escritor, poeta y fabulista colombiano. La cinta resume nuestro compromiso con la formación integral. Todo está unido por el círculo azul, símbolo de unidad y armonía. Así, sus colores y figuras forman un emblema moderno y lleno de vida, que refleja los valores que orientan a nuestra comunidad educativa.'
                                 )); 
                                 ?>
                             </p>
@@ -59,7 +75,7 @@
                 <div class="lg:w-2/5 text-center">
                     <div class="bg-background-light dark:bg-background-dark rounded-2xl p-4 shadow-lg">
                         <img 
-                            src="<?php echo esc_url(get_theme_mod('bandera_image', 'https://placehold.co/400x300/CBD5E1/1A202C?text=Bandera')); ?>"
+                            src="<?php echo esc_url($bandera_image); ?>"
                             alt="<?php echo esc_attr(get_theme_mod('bandera_alt', 'Bandera del Colegio San Martín')); ?>"
                             class="w-full h-64 mx-auto object-contain">
                     </div>
@@ -72,8 +88,8 @@
                         <div class="prose dark:prose-invert max-w-none">
                             <p class="text-lg text-text-light dark:text-text-dark leading-relaxed">
                                 <?php echo wp_kses_post(get_theme_mod('bandera_description',
-                                    'La bandera de nuestro colegio está compuesta por tres franjas horizontales: azul, blanco y verde. El azul representa la justicia y la verdad, el blanco simboliza la paz y la pureza de ideales, y el verde refleja la esperanza y el crecimiento. En el centro lleva nuestro escudo institucional, uniendo todos los elementos que representan nuestra identidad educativa.'
-                                ));
+                                    'Es un símbolo muy importante de la Institución que la distingue entre las demás, cada color tiene el siguiente significado: el Blanco, simboliza la persistencia, la bondad, la seguridad y la pureza. El verde, simboliza la esperanza, la inteligencia, el triunfo y el conocimiento.'
+                                    ));
                                 ?>
                             </p>
                         </div>
@@ -157,7 +173,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg">
                     <img 
-                        src="<?php echo esc_url(get_theme_mod('escudo_image', get_template_directory_uri() . '/assets/images/escudo.png')); ?>" 
+                        src="<?php echo esc_url($escudo_image); ?>" 
                         alt="Escudo"
                         class="w-32 h-32 mx-auto object-contain mb-4"
                     >
@@ -165,7 +181,7 @@
                 </div>
                 <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg">
                     <img 
-                        src="<?php echo esc_url(get_theme_mod('bandera_image', get_template_directory_uri() . '/assets/images/bandera.png')); ?>" 
+                        src="<?php echo esc_url($bandera_image); ?>" 
                         alt="Bandera"
                         class="w-32 h-32 mx-auto object-contain mb-4"
                     >

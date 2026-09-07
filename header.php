@@ -34,6 +34,9 @@
 						<a class="text-white text-sm font-medium hover:underline"
 							href="<?php echo esc_url($participes_url); ?>" target="_blank"
 							rel="noopener noreferrer">Participa</a>
+						<div class="w-44">
+							<?php get_search_form(); ?>
+						</div>
 					</div>
 					<div class="md:hidden">
 						<button class="text-white p-2 bg-gray-100 hover:bg-gray-300 transition-colors"
@@ -80,36 +83,18 @@
 								if (has_custom_logo()) {
 									the_custom_logo();
 								} else {
-									// Determinar clases de texto basadas en la presencia de imagen de cabecera
-									$title_class = $has_header_image 
-										? "text-white drop-shadow-lg" 
-										: "text-text-light dark:text-text-dark";
+									$institutional_logo_url = get_theme_file_uri('assets/img/rafaelpombo-removebg-preview.png');
 									?>
-									<div class="site-branding">
-										<?php if (is_front_page() && is_home()): ?>
-											<h1 class="site-title font-quartzo-bold text-3xl">
-												<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"
-													class="<?= $title_class; ?> hover:text-brand-primary transition-colors">
-													<?php bloginfo('name'); ?>
-												</a>
-											</h1>
-										<?php else: ?>
-											<p class="site-title font-quartzo-bold text-3xl">
-												<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"
-													class="<?= $title_class; ?> hover:text-brand-primary transition-colors">
-													<?php bloginfo('name'); ?>
-												</a>
-											</p>
-										<?php endif; ?>
-
-										<?php
-										$edusiteco_description = get_bloginfo('description', 'display');
-
-										if ($edusiteco_description || is_customize_preview()): ?>
-											<p class="site-description text-sm mt-1 <?= $title_class; ?>">
-												<?php echo $edusiteco_description; ?>
-											</p>
-										<?php endif; ?>
+									<div class="site-branding flex items-center gap-2">
+										<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" aria-label="Institución Educativa Rafael Pombo">
+											<img src="<?php echo esc_url($institutional_logo_url); ?>"
+												alt="Escudo de la Institución Educativa Rafael Pombo"
+												class="h-12 w-12 object-contain">
+										</a>
+										<div class="leading-none">
+											<span class="block font-serif text-xl font-bold text-white">Rafael Pombo</span>
+											<span class="mt-1 block text-[9px] font-semibold tracking-[0.12em] text-white">INSTITUCIÓN EDUCATIVA · POPAYÁN</span>
+										</div>
 									</div>
 									<?php
 								}
@@ -139,11 +124,6 @@
 						</div>
 
 						<div class="flex items-center space-x-4">
-							<!-- Search Bar -->
-							<div class="hidden md:block relative">
-								<?php get_search_form(); ?>
-							</div>
-
 							<!-- Botón Tema Oscuro/Claro -->
 							<button id="theme-toggle"
 								class="p-2 rounded-full flex justify-center items-center bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white <?php echo $has_header_image ? 'bg-white/20 hover:bg-white/30 text-white' : ''; ?>"

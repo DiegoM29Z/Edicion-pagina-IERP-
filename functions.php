@@ -105,6 +105,20 @@ function edusiteco_setup() {
 }
 add_action( 'after_setup_theme', 'edusiteco_setup' );
 
+function edusiteco_symbol_image( $setting, $fallback ) {
+	$image = get_theme_mod( $setting );
+
+	if ( ! $image ) {
+		return $fallback;
+	}
+
+	if ( attachment_url_to_postid( $image ) || strpos( $image, get_theme_file_uri() . '/' ) === 0 ) {
+		return $image;
+	}
+
+	return $fallback;
+}
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *

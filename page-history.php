@@ -16,8 +16,7 @@
             <p class="text-xl md:text-2xl opacity-90">
                 <?php
                 // Este texto podría ser un campo personalizado (Custom Field) para ser editable.
-                // echo esc_html__('Formando generaciones con valores desde 2004222', 'edusiteco');
-                echo esc_html__('Formando generaciones con valores desde 1939', 'edusiteco');
+                echo esc_html__('Formando generaciones con valores desde 1965', 'edusiteco');
                 ?>
             </p>
         </div>

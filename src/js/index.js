@@ -85,6 +85,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    const levelsCarousel = document.getElementById('niveles-carousel');
+    if (levelsCarousel) {
+        const levelPages = levelsCarousel.querySelectorAll('.nivel-page');
+        const previousLevelButton = document.getElementById('niveles-prev');
+        const nextLevelButton = document.getElementById('niveles-next');
+        let currentLevelPage = 0;
+
+        const showLevelPage = (pageIndex) => {
+            currentLevelPage = (pageIndex + levelPages.length) % levelPages.length;
+            levelPages.forEach((page, index) => page.classList.toggle('hidden', index !== currentLevelPage));
+        };
+
+        previousLevelButton?.addEventListener('click', () => showLevelPage(currentLevelPage - 1));
+        nextLevelButton?.addEventListener('click', () => showLevelPage(currentLevelPage + 1));
+    }
+
     // --- Dark/Light Theme Toggle ---
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
