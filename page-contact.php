@@ -138,8 +138,12 @@ get_header();
                             <div>
                                 <h4 class="font-bold text-gray-900 dark:text-white mb-1">Dirección</h4>
                                 <p class="text-text-light dark:text-text-dark">
-                                    Calle Principal 123<br>
-                                    Popayán, Cauca 76001
+                                    <!-- Calle Principal 123<br>
+                                    Popayán, Cauca 76001 -->
+                                    <strong>Sede Principal:</strong> Calle 7 No 7-24 B/ Centro<br>
+                                    <strong>Sede Valencia:</strong> Calle 7 No 11-93 B/ Valencia<br>
+                                    <strong>Sede Cadillal:</strong> Calle 4 con carrera 16 B/ Cadillal<br>
+                                    Popayán, Cauca
                                 </p>
                             </div>
                         </div>
@@ -173,10 +177,16 @@ get_header();
                                 </div>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900 dark:text-white mb-1">Correo Electrónico</h4>
-                                <p class="text-text-light dark:text-text-dark">
+                                <!-- <h4 class="font-bold text-gray-900 dark:text-white mb-1">Correo Electrónico</h4> -->
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-1">Sitio Web</h4>
+                                <!-- <p class="text-text-light dark:text-text-dark">
                                     <a href="mailto:info@ierp-popayan.edu.co" class="hover:font-semibold transition-all" style="color: hsl(var(--color-brand-primary));">
                                         info@ierp-popayan.edu.co
+                                    </a>
+                                </p> -->
+                                <p class="text-text-light dark:text-text-dark">
+                                    <a href="https://www.ierafaelpombopopayan.edu.co" target="_blank" class="hover:font-semibold transition-all" style="color: hsl(var(--color-brand-primary));">
+                                        www.ierafaelpombopopayan.edu.co
                                     </a>
                                 </p>
                             </div>
@@ -193,10 +203,15 @@ get_header();
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-900 dark:text-white mb-1">Horario de Atención</h4>
-                                <p class="text-gray-600 dark:text-gray-400">
+                                <!-- <p class="text-gray-600 dark:text-gray-400">
                                     <strong>Lunes - Viernes:</strong> 8:00 AM - 5:00 PM<br>
                                     <strong>Sábado:</strong> 9:00 AM - 1:00 PM<br>
                                     <strong>Domingo:</strong> Cerrado
+                                </p> -->
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    <strong>Secretaría y Administrativos:</strong><br>
+                                    <strong>Lunes a Viernes:</strong> 7:00 a.m. a 3:48 p.m.<br>
+                                    <strong>Sábados y Domingos:</strong> Cerrado
                                 </p>
                             </div>
                         </div>

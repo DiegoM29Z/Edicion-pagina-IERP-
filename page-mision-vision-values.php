@@ -14,8 +14,10 @@
         ? get_the_post_thumbnail_url(null, 'full')
         : get_template_directory_uri() . '/assets/images/hero-mision-vision.jpg';
     ?>
+    <!-- <section class="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-white"
+        style="background-image: linear-gradient(rgba(51, 102, 204, 0.8), rgba(51, 102, 204, 0.9)), url('<?php echo esc_url($hero_image_url); ?>');"> -->
     <section class="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-white"
-        style="background-image: linear-gradient(rgba(51, 102, 204, 0.8), rgba(51, 102, 204, 0.9)), url('<?php echo esc_url($hero_image_url); ?>');">
+        style="background-image: linear-gradient(hsl(var(--color-brand-primary) / 0.85), hsl(var(--color-brand-secondary) / 0.95)), url('<?php echo esc_url($hero_image_url); ?>');">
         <div class="relative z-10 text-center px-4 animate-fade-in-up">
             <h1 class="text-4xl md:text-6xl font-bold mb-4"><?php the_title(); ?></h1>
             <p class="text-xl md:text-2xl opacity-90">
@@ -34,6 +36,7 @@
                 <div class="lg:w-1/3 text-center lg:text-left">
                     <div
                         class="w-24 h-24 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-4">
+                        <!-- Icono Antiguo Misión
                         <svg viewBox="0 -0.5 1025 1025" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
                             fill="#000000">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -77,6 +80,13 @@
                                     fill="#191919"></path>
                             </g>
                         </svg>
+                        -->
+                        <!-- Nuevo Icono Misión (Lucide Target) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-blue-600 dark:text-blue-400">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="6"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
                     </div>
                     <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                         <?php echo esc_html__('Nuestra Misión', 'edusiteco'); ?>
@@ -88,7 +98,7 @@
                             <?php
                             $mision_text = get_theme_mod(
                                 'mision_text',
-                                'Formar integralmente a nuestros estudiantes mediante una educación de calidad basada en valores, desarrollando sus capacidades intelectuales, emocionales y sociales para que se conviertan en ciudadanos responsables, críticos y comprometidos con la transformación positiva de la sociedad.'
+                                'La Institución Educativa Rafael Pombo de Popayán tiene como misión formar integralmente a sus estudiantes en valores, saberes, habilidades, destrezas y competencias que le permitan construir su proyecto de vida y contribuir al desarrollo de su comunidad y al mejoramiento de la sociedad. '
                             );
                             echo esc_html($mision_text);
                             ?>
@@ -107,6 +117,7 @@
                     <div
                         class="w-24 h-24 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-4">
 
+                        <!-- Icono Antiguo Visión
                         <svg fill="#E2BD38" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" width="68px"
                             height="" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32.148 32.148"
                             xml:space="preserve">
@@ -188,6 +199,12 @@
                                 </g>
                             </g>
                         </svg>
+                        -->
+                        <!-- Nuevo Icono Visión (Lucide Eye) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-yellow-600 dark:text-yellow-400">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
                     </div>
                     <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                         <?php echo esc_html__('Nuestra Visión', 'edusiteco'); ?>
@@ -199,7 +216,8 @@
                             <?php
                             $vision_text = get_theme_mod(
                                 'vision_text',
-                                'Ser reconocidos como una institución educativa líder en la formación de personas íntegras, innovadoras y comprometidas con el desarrollo sostenible, destacándonos por nuestra excelencia académica, inclusión y contribución al progreso de la comunidad.'
+                                'La Institución Educativa Rafael Pombo de Popayán en el año 2026, será reconocida por su liderazgo en la formación integral de sus estudiantes: personas formadas en valores, críticas, comprometidas, emprendedoras y gestoras de progreso personal, para su familia y su comunidad.
+'
                             );
                             echo esc_html($vision_text);
                             ?>

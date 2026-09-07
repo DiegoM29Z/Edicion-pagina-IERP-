@@ -8,14 +8,16 @@
 
 <main id="primary" class="site-main">
     <!-- Hero Section -->
+    <!-- <section class="relative h-[50vh] bg-cover bg-gradient-custom flex items-center justify-center text-white" style=""> -->
     <section class="relative h-[50vh] bg-cover bg-gradient-custom flex items-center justify-center text-white"
-        style="">
+        style="background-image: linear-gradient(hsl(var(--color-brand-primary) / 0.85), hsl(var(--color-brand-secondary) / 0.95)), url('<?php echo esc_url(get_template_directory_uri() . '/assets/img/hero-historia.jpg'); ?>');">
         <div class="relative z-10 text-center px-4 animate-fade-in-up">
             <h1 class="text-4xl md:text-6xl font-bold font-display mb-4"><?php the_title(); ?></h1>
             <p class="text-xl md:text-2xl opacity-90">
                 <?php
                 // Este texto podría ser un campo personalizado (Custom Field) para ser editable.
-                echo esc_html__('Formando generaciones con valores desde 1965', 'edusiteco');
+                // echo esc_html__('Formando generaciones con valores desde 2004222', 'edusiteco');
+                echo esc_html__('Formando generaciones con valores desde 1939', 'edusiteco');
                 ?>
             </p>
         </div>

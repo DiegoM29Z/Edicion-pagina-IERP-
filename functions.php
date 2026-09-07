@@ -265,6 +265,7 @@ add_action( 'customize_controls_enqueue_scripts', 'edusiteco_customize_controls_
  * @return array
  */
 function edusiteco_get_hitos_historia() {
+    /*
     return array(
         array(
             'año' => '1965',
@@ -303,6 +304,37 @@ function edusiteco_get_hitos_historia() {
             'icono' => '⚽'
         )
     );
+    */
+    return array(
+        array(
+            'año' => '1939',
+            'titulo' => __('Fundación de la Escuela', 'edusiteco'),
+            'descripcion' => __('Fundada el 15 de junio como escuela pública de Varones Rafael Pombo, con un director y tres subdirectores.', 'edusiteco'),
+            // 'icono' => '🏛️'
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>'
+        ),
+        array(
+            'año' => '1945',
+            'titulo' => __('Primeras Instalaciones', 'edusiteco'),
+            'descripcion' => __('Funcionó con tres aulas en el terreno donde hoy se encuentra el Hotel Monasterio en Popayán.', 'edusiteco'),
+            // 'icono' => '🏫'
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>'
+        ),
+        array(
+            'año' => '1948',
+            'titulo' => __('Crecimiento y Traslado', 'edusiteco'),
+            'descripcion' => __('Reubicada en la iglesia de San José y luego a la Casa Brava debido al rápido incremento de estudiantes.', 'edusiteco'),
+            // 'icono' => '📈'
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>'
+        ),
+        array(
+            'año' => '1949',
+            'titulo' => __('Sede Propia', 'edusiteco'),
+            'descripcion' => __('El 13 de octubre se asigna sede propia en el Barrio Valencia, contando con 5 aulas y 200 estudiantes.', 'edusiteco'),
+            // 'icono' => '🔑'
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
+        )
+    );
 }
 
 /**
@@ -311,11 +343,43 @@ function edusiteco_get_hitos_historia() {
  * @return array
  */
 function edusiteco_get_logros_historia() {
+    /*
     return array(
         array('titulo' => __('Premio Excelencia', 'edusiteco'), 'descripcion' => __('Reconocimiento del Ministerio de Educación (2019)', 'edusiteco'), 'icono' => '🏆', 'color' => 'from-yellow-400 to-yellow-500'),
         array('titulo' => __('Certificación Verde', 'edusiteco'), 'descripcion' => __('Primer colegio certificado ambientalmente', 'edusiteco'), 'icono' => '🌱', 'color' => 'from-green-400 to-green-500'),
         array('titulo' => __('Olimpiadas Matemáticas', 'edusiteco'), 'descripcion' => __('15 medallas en competencias internacionales', 'edusiteco'), 'icono' => '📚', 'color' => 'from-blue-400 to-blue-500'),
         array('titulo' => __('Deportes', 'edusiteco'), 'descripcion' => __('Campeones intercolegiales 2022-2023', 'edusiteco'), 'icono' => '⚽', 'color' => 'from-red-400 to-red-500')
+    );
+    */
+    return array(
+        array(
+            'titulo' => __('Trayectoria', 'edusiteco'), 
+            'descripcion' => __('Más de 80 años formando generaciones en Popayán desde 1939.', 'edusiteco'), 
+            // 'icono' => '⏳', 
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+            'color' => 'from-blue-400 to-blue-500'
+        ),
+        array(
+            'titulo' => __('Crecimiento', 'edusiteco'), 
+            'descripcion' => __('Expansión constante desde sus inicios con 200 estudiantes en 1949.', 'edusiteco'), 
+            // 'icono' => '📈', 
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
+            'color' => 'from-green-400 to-green-500'
+        ),
+        array(
+            'titulo' => __('Identidad', 'edusiteco'), 
+            'descripcion' => __('Sólida formación integral basada en Respeto, Responsabilidad y Honestidad.', 'edusiteco'), 
+            // 'icono' => '⭐', 
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+            'color' => 'from-yellow-400 to-yellow-500'
+        ),
+        array(
+            'titulo' => __('Comunidad', 'edusiteco'), 
+            'descripcion' => __('Una institución arraigada en el corazón y la historia de Popayán.', 'edusiteco'), 
+            // 'icono' => '❤️', 
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+            'color' => 'from-red-400 to-red-500'
+        )
     );
 }
 
@@ -328,21 +392,48 @@ function edusiteco_get_logros_historia() {
 function edusiteco_get_valores_ficticios() {
     return array(
         array(
-            'icono' => '🤝',
+            // 'icono' => '🤝',
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 dark:text-blue-400"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3-6 6"/><path d="M11 17l-1-1"/><path d="m15 19-2-2"/><path d="m10 21-2-2"/><path d="m14 23-4-4"/><path d="M3 11a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L13 11"/><path d="m3 10 6-6"/></svg>',
             'titulo' => __('Respeto', 'edusiteco'),
-            'descripcion' => __('Promovemos relaciones basadas en la empatía, tolerancia y reconocimiento mutuo.', 'edusiteco')
+            'descripcion' => __('Reconocer el valor de cada quien, en su persona y su propiedad, considerando la existencia de la dignidad humana, del entorno y de los bienes ajenos al momento de actuar y decidir.', 'edusiteco')
         ),
         array(
-            'icono' => '✅',
+            // 'icono' => '✅',
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 dark:text-blue-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
             'titulo' => __('Responsabilidad', 'edusiteco'),
-            'descripcion' => __('Asumimos compromisos con disciplina, honestidad y sentido del deber.', 'edusiteco')
+            'descripcion' => __('Cumplir con los deberes, compromisos y obligaciones; aceptando completamente las consecuencias de decisiones y acciones.  La responsabilidad facilita el desarrollo máximo del potencial.', 'edusiteco')
         ),
         array(
-            'icono' => '💡',
-            'titulo' => __('Excelencia', 'edusiteco'),
-            'descripcion' => __('Buscamos la superación constante en todos los aspectos de nuestra labor educativa.', 'edusiteco')
+            // 'icono' => '💡',
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 dark:text-blue-400"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.2 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>',
+            'titulo' => __('Honestidad', 'edusiteco'),
+            'descripcion' => __('Desarrollar cualquier acción humana con rectitud, transparencia y sentido de pertenencia. La honestidad en nuestras acciones garantiza la tranquilidad de conciencia.', 'edusiteco')
         ),
         // Puedes añadir los demás valores aquí si lo deseas
+        array(
+            // 'icono' => '⚖️',
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 dark:text-blue-400"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>',
+            'titulo' => __('Justicia', 'edusiteco'),
+            'descripcion' => __('Reconocer a cada quien lo que le corresponde por sus derechos, necesidades, y responsabilidades. La Justicia nos hace equitativos.', 'edusiteco')
+        ),
+        array(
+            // 'icono' => '🫂',
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 dark:text-blue-400"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg>',
+            'titulo' => __('Solidaridad', 'edusiteco'),
+            'descripcion' => __('Interés y apertura hacia la comunidad, hacia el servicio a los demás y la participación social, para el logro del bienestar común. La solidaridad nos hace sensibles y facilita el servicio a los demás.', 'edusiteco')
+        ),
+        array(
+            // 'icono' => '☮️',
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 dark:text-blue-400"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+            'titulo' => __('Tolerancia', 'edusiteco'),
+            'descripcion' => __('Reconocer la diferencia; valorar, respetar y aceptar a las otras personas con su forma de pensar y de actuar aunque no lo compartamos. La tolerancia propicia el diálogo y los acuerdos de acción para una mejor convivencia.', 'edusiteco')
+        ),
+        array(
+            // 'icono' => '🌍',
+            'icono' => '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 dark:text-blue-400"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>',
+            'titulo' => __('Inclusión', 'edusiteco'),
+            'descripcion' => __('Valorar la diversidad social, cultural, étnica, sexual y personal, que hace parte de nuestro entorno y asumir un compromiso significativo dirigido a dimensionar al ser indistintamente de su particularidad. Respetamos la particularidad y la diversidad y ofrecemos una educación de calidad para todos y todas.', 'edusiteco')
+        ),
     );
 }
 
